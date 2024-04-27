@@ -9,20 +9,24 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 
 // import images
-import HeroImg1 from "../assets/images/fondation/m1.jpg";
+import HeroImg1 from "../assets/images/fondation/fondation-cover.jpg";
 import HeroImg2 from "../assets/images/fondation/m2.jpg";
 import HeroImg3 from "../assets/images/heroSlider/3.jpg";
 
 const slides = [
   {
-    title: "Your Luxury Hotel For Vacation",
+    title: "Fondation Richesse Humaine",
+    prevtitle: "",
+    subtitle:"Résolument engagé à créer  de la valeur dans tous les domaines de la vie socio-économique en construisant l'avenir des jeunes Congolais dans l'emploi, l'entrepreunariat social et des affaires",
     background: HeroImg1,
-    btnText: "See our rooms",
+    btnText: "Présentation",
   },
   {
-    title: "Your Luxury Hotel For Vacation",
+    title: "Fondation Richesse Humaine",
+    subtitle: "Notre engagement envers le développement personnel et professionnel des jeunes est crucial pour stimuler la croissance économique et sociale en République Démocratique du Congo",
+    prevtitle:"",
     background: HeroImg2,
-    btnText: "See our rooms",
+    btnText: "Présentation",
   }
 ];
 
@@ -41,7 +45,7 @@ const HeroSlider = () => {
       >
         {slides.map((slide, index) => {
           // destructure slide
-          const { title, background, btnText } = slide;
+          const { title, background, btnText, subtitle, prevtitle } = slide;
 
           return (
             <SwiperSlide
@@ -51,11 +55,12 @@ const HeroSlider = () => {
               {/* hero data */}
               <div className="container z-20 mx-auto text-center text-white">
                 <div className="mb-5 font-tertiary uppercase tracking-[6px]">
-                  Just Enjoy & Relax
+                  {prevtitle}
                 </div>
-                <h1 className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
+                <h1 className="mx-auto max-w-[920px] font-bold font-primary text-[30px] uppercase lg:text-[50px] ">
                   {title}
                 </h1>
+                <p className="font-primary text-[18px] mb-3" >{subtitle}</p>
                 <button className="btn btn-primary btn-lg mx-auto">
                   {btnText}
                 </button>
@@ -71,7 +76,7 @@ const HeroSlider = () => {
               </div>
 
               {/* hero overlay */}
-              <div className="absolute top-0 left-0 h-full w-full bg-black/50" />
+              <div className="absolute top-0 left-0 h-full w-full bg-black/60" />
             </SwiperSlide>
           );
         })}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // import icon
-import { BsCalendar } from "react-icons/bs";
+import { BsPeople } from "react-icons/bs";
 
 // import datepicker
 import DataPicker from "react-datepicker";
@@ -18,17 +18,14 @@ const CheckIn = () => {
       {/* date icons */}
       <div className="absolute z-30 pr-8">
         <div>
-          <BsCalendar className="text-base text-accent" />
+          <BsPeople className="text-base text-accent text-2xl" />
         </div>
       </div>
 
       {/* date calendar */}
-      <DataPicker
-        className="h-full w-full"
-        selected={startDate}
-        placeholderText="Check in"
-        onChange={(date) => setStartDate(date)}
-      />
+      <div className="bg-white h-full w-full flex items-center px-4">
+        <p className="text-xl" >+50</p>
+      </div>
     </div>
   );
 };
