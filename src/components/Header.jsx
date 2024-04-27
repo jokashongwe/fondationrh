@@ -52,34 +52,58 @@ const Header = () => {
                 ) : (
                   <img src={LogoWhite} alt="header logo" className="w-[120px]" />
                 )}
-                <button onClick={() => setMobileOpen(!mobileOpen)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <button onClick={() => setMobileOpen(!mobileOpen)} data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="navbar-default" aria-expanded="false">
                   <span className="sr-only">Ouvrir le menu</span>
                   <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
                   </svg>
                 </button>
-                <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                  <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <div className={`hidden w-full md:block md:w-auto`} id="navbar-default">
+                  <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
                     <li>
-                      <a href="/" className={`text-tertiary`}>Accueil</a>
+                      <a href="/" className={`text-tertiary uppercase`}>Accueil</a>
                     </li>
                     <li>
-                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900": "text-white"} text-tertiary  md:border-0 md:hover:text-yellow-700 md:p-0`}>A PROPOS</a>
+                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900" : "text-white"} text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>A PROPOS</a>
                     </li>
                     <li>
-                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900": "text-white"} text-tertiary  md:border-0 md:hover:text-yellow-700 md:p-0`}>NOS AXES</a>
+                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900" : "text-white"} text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>NOS AXES</a>
                     </li>
                     <li>
-                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900": "text-white"} text-tertiary  md:border-0 md:hover:text-yellow-700 md:p-0`}>Gallérie Photos</a>
+                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900" : "text-white"} text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>Gallérie Photos</a>
                     </li>
                     <li>
-                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900": "text-white"} text-tertiary  md:border-0 md:hover:text-yellow-700 md:p-0`}>évènements</a>
+                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900" : "text-white"} text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>évènements</a>
                     </li>
                     <li>
-                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900": "text-white"} text-tertiary  md:border-0 md:hover:text-yellow-700 md:p-0`}>Contact</a>
+                      <a href="#" className={` uppercase py-2 px-3 ${header ? "text-gray-900" : "text-white"} text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>Contact</a>
                     </li>
                   </ul>
                 </div>
+                {mobileOpen && (
+                  <div className={`bg-white w-full md:block md:w-auto`} id="navbar-default">
+                    <ul className="font-medium flex flex-col p-4 md:p-0  border border-gray-100 rounded-lg  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                      <li className="my-2">
+                        <a href="/" className={`text-tertiary uppercase text-gray-900 py-2 px-3`}>Accueil</a>
+                      </li>
+                      <li className="my-2">
+                        <a href="#" className={` uppercase py-2 px-3 text-gray-900  text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>A PROPOS</a>
+                      </li>
+                      <li className="my-2">
+                        <a href="#" className={` uppercase py-2 px-3 text-gray-900  text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>NOS AXES</a>
+                      </li>
+                      <li className="my-2">
+                        <a href="#" className={` uppercase py-2 px-3 text-gray-900  text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>Gallérie Photos</a>
+                      </li>
+                      <li className="my-2">
+                        <a href="#" className={` uppercase py-2 px-3 text-gray-900  text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>évènements</a>
+                      </li>
+                      <li className="my-2">
+                        <a href="#" className={` uppercase py-2 px-3 text-gray-900  text-tertiary  md:border-0 hover:text-yellow-700 md:p-0`}>Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             </nav>
 
